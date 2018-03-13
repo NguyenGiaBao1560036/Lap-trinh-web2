@@ -10,9 +10,11 @@ class PageController extends Controller
     public function getIndex(){
         //slide
         $slide = Slide::all();
-        //san pham khuyen mai
+        //san pham mới
         $new_product = Product::where('new',1)->paginate(8);
-        return view('page.trangchu',compact('slide','new_product'));
+        //san pham khuyen mai
+        $sale = Product::where('promotion_price','<>',0)->paginate(8);
+        return view('page.trangchu',compact('slide','new_product','sale'));
     }
      public function getLoaiSp(){
     	return view('page.loai_sanpham');

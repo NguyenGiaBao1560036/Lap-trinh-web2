@@ -8,10 +8,9 @@ use App\Product;
 class PageController extends Controller
 {
     public function getIndex(){
+        $slide = Slide::all();
         
-     //    $data = Product::all()->toArray();
-    	// return view('page.trangchu',compact('data'));
-        return view('page.trangchu');
+        return view('page.trangchu',compact('slide'));
     }
      public function getLoaiSp(){
     	return view('page.loai_sanpham');

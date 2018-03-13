@@ -8,9 +8,11 @@ use App\Product;
 class PageController extends Controller
 {
     public function getIndex(){
+        //slide
         $slide = Slide::all();
-        
-        return view('page.trangchu',compact('slide'));
+        //san pham khuyen mai
+        $new_product = Product::where('new',1)->paginate(8);
+        return view('page.trangchu',compact('slide','new_product'));
     }
      public function getLoaiSp(){
     	return view('page.loai_sanpham');

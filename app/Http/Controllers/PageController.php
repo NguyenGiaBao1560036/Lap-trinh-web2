@@ -11,7 +11,7 @@ class PageController extends Controller
         
      //    $data = Product::all()->toArray();
     	// return view('page.trangchu',compact('data'));
-        return view('master');
+        return view('page.trangchu');
     }
      public function getLoaiSp(){
     	return view('page.loai_sanpham');

@@ -57,15 +57,16 @@
 							</div>
 
 							<div class="row">
+								@while($dt = array_pop($data))
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
 											<a href="product.html"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
 										</div>
 										<div class="single-item-body">
-											<p class="single-item-title">Sample Woman Top</p>
+											<p class="single-item-title">{!!$dt['name']!!}</p>
 											<p class="single-item-price">
-												<span>$34.55</span>
+												<span>{!!$dt['unit_price']!!}</span>
 											</p>
 										</div>
 										<div class="single-item-caption">
@@ -75,7 +76,8 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-3">
+								@endwhile
+								<!-- <div class="col-sm-3">
 									<div class="single-item">
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 
@@ -131,7 +133,7 @@
 											<div class="clearfix"></div>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div> <!-- .beta-products-list -->
 

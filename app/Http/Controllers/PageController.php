@@ -1,12 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Slide;
 use Illuminate\Http\Request;
+use App\Product;
+
 class PageController extends Controller
 {
     public function getIndex(){
-    	return view('page.trangchu');
+        
+     //    $data = Product::all()->toArray();
+    	// return view('page.trangchu',compact('data'));
+        return view('master');
     }
      public function getLoaiSp(){
     	return view('page.loai_sanpham');

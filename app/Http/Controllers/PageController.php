@@ -19,7 +19,9 @@ class PageController extends Controller
      public function getLoaiSp($type){
          //san pham theo loai san pham
          $sp_theoloai = Product::where('id_type',$type)->get();
-    	return view('page.loai_sanpham',compact('sp_theoloai'));
+         //san pham khac loai
+         $sp_khacloai = Product::where('id_type','<>',$type)->paginate(3);
+    	return view('page.loai_sanpham',compact('sp_theoloai','sp_khacloai'));
     }
     public function getChitiet(){
     	return view('page.chitiet_sanpham');

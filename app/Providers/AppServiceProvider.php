@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('header',function($view){
+        view()->composer(['header','loai_sanpham'],function($view){
             $loai_sp = ProductType::all();
             $view->with('loai_sp',$loai_sp);
         });

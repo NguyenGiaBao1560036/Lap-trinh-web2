@@ -94,7 +94,7 @@
 					<li><a href="#">Sản phẩm</a>
 						<ul class="sub-menu">
 						@foreach($loai_sp as $sp)
-							<li><a href="product_type.html">{{$sp->name}}</a></li>
+							<li><a href="{{route('loaisanpham',$sp->id)}}">{{$sp->name}}</a></li>
 						@endforeach
 						</ul>
 					</li>

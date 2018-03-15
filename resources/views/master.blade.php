@@ -15,6 +15,7 @@
 	<link rel="stylesheet" title="style" href="Source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="Source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="Source/assets/dest/css/huong-style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
 

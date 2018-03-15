@@ -38,3 +38,8 @@ Route::get('timkiem',[
 	'as'=>'search',
 	'uses'=>'PageController@getsearch'
 ]);
+
+Route::post("lien-he",[
+	'as'=>'lienhe',
+	'uses'=>'PageController@postLienHe'
+]);

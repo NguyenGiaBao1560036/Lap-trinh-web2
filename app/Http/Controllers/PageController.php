@@ -5,6 +5,7 @@ use App\Slide;
 use Illuminate\Http\Request;
 use App\Product;
 use App\ProductType;
+use Validator;
 class PageController extends Controller
 {
     public function getIndex(){
@@ -42,5 +43,43 @@ class PageController extends Controller
         ->orwhere('unit_price',$req->key)
         ->paginate(4);
         return view('page.search',compact('product'));
+    }
+    public function postLienHe(Request $req){
+  
+        $check = [
+            'name'=>'required|max:50',
+            'email'=>'required|max:50|email',
+            'chude'=>'required|max:50',
+            'noidunng'=>'required|max:200'
+             //min:20,max:80
+        ];
+
+        $mess = [
+            'name.required'=>'Vui lòng nhập họ tên',
+            'name.max'=>'Họ tên không quá :max kí tự',
+            'email.required'=>'Vui lòng nhập email',
+            'email.max'=>'Email không quá :max kí tự',
+            'email.email'=>'Vui lòng nhập đúng email',
+            'chude.required'=>'Vui lòng nhập chủ đề',
+            'chude.max'=>'Chủ đề không quá :max kí tự',
+            'noidung.required'=>'Vui lòng nhập nội dung',
+            'noidung.max'=>'Nội dung không quá :max kí tự'
+
+        ];
+        $validator = Validator::make($check,$mess);
+
+        if($validator->fails()) {
+            return redirect('lienhe')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // $data = $req->all();
+        // echo "<pre>";
+        // print_r($data);
+        // echo '</pre>';
+
+        // return redirect()->route('lienhe')
+        // ->with('message','Successfully, Plz login');
     }
 }

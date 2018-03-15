@@ -7,7 +7,7 @@
 		</div>
 		<div class="pull-right">
 			<div class="beta-breadcrumb font-large">
-				<a href="index.html">Home</a> / <span>Contacts</span>
+				<a href="{{route('trang-chu')}}">Home</a> / <span>Contacts</span>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -24,23 +24,57 @@
 		<div class="space50">&nbsp;</div>
 		<div class="row">
 			<div class="col-sm-8">
-				<h2>Contact Form</h2>
+				<h2>Mẫu Liên hệ</h2>
 				<div class="space20">&nbsp;</div>
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+				<p>Để liên hệ cho chúng tôi mời bạn nhập đầy đủ thông tin theo yêu cầu</p>
 				<div class="space20">&nbsp;</div>
-				<form action="#" method="post" class="contact-form">	
-					<div class="form-block">
-						<input name="your-name" type="text" placeholder="Your Name (required)">
+				@if(Session::has('message'))
+					<div class="alert alert-danger">
+						{{Session::get('message')}}
 					</div>
+                @endif
+				<form method="post" class="contact-form">
+					<input type="hidden" name="_token" value="{{csrf_token()}}">	
 					<div class="form-block">
-						<input name="your-email" type="email" placeholder="Your Email (required)">
+						<input name="name" type="text" placeholder="Nhập họ tên" >
 					</div>
+					@if($errors->has('name'))
+                        <div class="text-danger">
+                            @foreach($errors->get('name') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                    @endif
 					<div class="form-block">
-						<input name="your-subject" type="text" placeholder="Subject">
+						<input name="email" type="email" placeholder="Nhập email">
 					</div>
+					@if($errors->has('email'))
+                        <div class="text-danger">
+                            @foreach($errors->get('email') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                     @endif
 					<div class="form-block">
-						<textarea name="your-message" placeholder="Your Message"></textarea>
+						<input name="chude" type="text" placeholder="Nhập chủ đề">
 					</div>
+					@if($errors->has('chude'))
+                        <div class="text-danger">
+                            @foreach($errors->get('chude') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                    @endif
+					<div class="form-block">
+						<textarea name="noidung" placeholder="Nhập nội dung"></textarea>
+					</div>
+					@if($errors->has('noidung'))
+                        <div class="text-danger">
+                            @foreach($errors->get('noidung') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                    @endif
 					<div class="form-block">
 						<button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
 					</div>

@@ -29,7 +29,10 @@ class PageController extends Controller
     }
     public function getChitiet(Request $req){
         $sanpham = Product::where('id',$req->id)->first();
-    	return view('page.chitiet_sanpham',compact('sanpham'));
+        $sanpham_tt = Product::where('id_type',$sanpham->id_type)->paginate(3);
+        $new_product = Product::where('new',1)->paginate(5);
+        $sale = Product::where('promotion_price','<>',0)->paginate(5);
+    	return view('page.chitiet_sanpham',compact('sanpham','sanpham_tt','new_product','sale'));
     }
      public function getLienHe(){
     	return view('page.lienhe');

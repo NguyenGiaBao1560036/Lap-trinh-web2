@@ -33,3 +33,8 @@ Route::get("lien-he",[
 	'as'=>'lienhe',
 	'uses'=>'PageController@getLienHe'
 ]);
+
+Route::get('timkiem',[
+	'as'=>'search',
+	'uses'=>'PageController@getsearch'
+]);

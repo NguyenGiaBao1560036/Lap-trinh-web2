@@ -33,4 +33,10 @@ class PageController extends Controller
      public function getLienHe(){
     	return view('page.lienhe');
     }
+    public function getsearch(Request $req){
+        $product = Product::where('name','like','%'.$req->key.'%')
+        ->orwhere('unit_price',$req->key)
+        ->paginate(4);
+        return view('page.search',compact('product'));
+    }
 }

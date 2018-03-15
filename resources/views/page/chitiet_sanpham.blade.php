@@ -4,11 +4,11 @@
 <div class="inner-header">
 	<div class="container">
 		<div class="pull-left">
-			<h6 class="inner-title">Product</h6>
+			<h6 class="inner-title">{{$sanpham->name}}</h6>
 		</div>
 		<div class="pull-right">
 			<div class="beta-breadcrumb font-large">
-				<a href="index.html">Home</a> / <span>Product</span>
+				<a href="{{route('trang-chu')}}">Home</a> / <span>Thông tin chi tiết sản phẩm</span>
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -22,13 +22,18 @@
 
 				<div class="row">
 					<div class="col-sm-4">
-						<img src="assets/dest/images/products/6.jpg" alt="">
+						<img src="Source/image/product/{{$sanpham->image}}" alt="">
 					</div>
 					<div class="col-sm-8">
 						<div class="single-item-body">
-							<p class="single-item-title">Sample Woman Top</p>
+							<p class="single-item-title"><h2>{{$sanpham->name}}</h2></p>
 							<p class="single-item-price">
-								<span>$34.55</span>
+								@if($sanpham->promotion_price == 0)
+									<span class="flash-sale">{{$sanpham->unit_price}}</span>
+								@else
+									<span class="flash-del">{{$sanpham->unit_price}}</span>
+									<span class="flash-sale">{{$sanpham->promotion_price}}</span>
+								@endif
 							</p>
 						</div>
 
@@ -36,36 +41,21 @@
 						<div class="space20">&nbsp;</div>
 
 						<div class="single-item-desc">
-							<p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo ms id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe.</p>
+							<p>{{$sanpham->description}}</p>
 						</div>
 						<div class="space20">&nbsp;</div>
 
-						<p>Options:</p>
+						<p>Số Lượng:</p>
 						<div class="single-item-options">
-							<select class="wc-select" name="size">
+							<select class="wc-select" name="số lượng">
 								<option>Size</option>
-								<option value="XS">XS</option>
-								<option value="S">S</option>
-								<option value="M">M</option>
-								<option value="L">L</option>
-								<option value="XL">XL</option>
+								<option value="XS">1</option>
+								<option value="S">2</option>
+								<option value="M">3</option>
+								<option value="L">4</option>
+								<option value="XL">5</option>
 							</select>
-							<select class="wc-select" name="color">
-								<option>Color</option>
-								<option value="Red">Red</option>
-								<option value="Green">Green</option>
-								<option value="Yellow">Yellow</option>
-								<option value="Black">Black</option>
-								<option value="White">White</option>
-							</select>
-							<select class="wc-select" name="color">
-								<option>Qty</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-							</select>
+						
 							<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
 							<div class="clearfix"></div>
 						</div>
@@ -75,21 +65,17 @@
 				<div class="space40">&nbsp;</div>
 				<div class="woocommerce-tabs">
 					<ul class="tabs">
-						<li><a href="#tab-description">Description</a></li>
-						<li><a href="#tab-reviews">Reviews (0)</a></li>
+						<li><a href="#tab-description">Mô Tả</a></li>
 					</ul>
 
 					<div class="panel" id="tab-description">
-						<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
-						<p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequaturuis autem vel eum iure reprehenderit qui in ea voluptate velit es quam nihil molestiae consequr, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? </p>
-					</div>
-					<div class="panel" id="tab-reviews">
-						<p>No Reviews</p>
+						<p>{{$sanpham->description}}</p>
+						
 					</div>
 				</div>
 				<div class="space50">&nbsp;</div>
 				<div class="beta-products-list">
-					<h4>Related Products</h4>
+					<h4>Sản Phẩm Cùng Loại</h4>
 
 					<div class="row">
 						<div class="col-sm-4">

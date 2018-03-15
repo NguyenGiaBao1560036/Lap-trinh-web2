@@ -42,7 +42,7 @@
 							<div class="col-sm-3">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="product.html"><img src="Source/image/product/{{$sp->image}} " alt="" height="298px"></a>
+										<a href="{{route('chitietsanpham',$sp->id)}}"><img src="Source/image/product/{{$sp->image}} " alt="" height="298px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$sp->name}}</p>
@@ -80,7 +80,7 @@
 							<div class="col-sm-3">
 								<div class="single-item">
 									<div class="single-item-header">
-										<a href="product.html"><img src="Source/image/product/{{$l->image}}" alt="" height="298px"></a>
+										<a href="{{route('chitietsanpham',$l->id)}}"><img src="Source/image/product/{{$l->image}}" alt="" height="298px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$l->name}}</p>

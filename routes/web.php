@@ -63,3 +63,4 @@ Route::get('dathang',[
     'as'=>'dat-hang',
     'uses'=>'PageController@getdathang'
 ]);
+

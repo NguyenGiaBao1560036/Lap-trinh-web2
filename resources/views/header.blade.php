@@ -65,6 +65,7 @@
 								<div class="center">
 									<div class="space10">&nbsp;</div>
 									<a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+									<a href="{{route('empty-cart')}}" class="beta-btn primary text-center">Xóa Tất Cả <i class="fa fa-chevron-right"></i></a>
 								</div>
 							</div>
 						@endif

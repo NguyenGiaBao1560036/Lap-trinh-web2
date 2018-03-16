@@ -102,4 +102,9 @@ class PageController extends Controller
             Session::forget('cart');
         return redirect()->back();
     }
+    public function xoagiohang(){
+        if(Session::has('cart'))
+            Session::forget('cart');
+        return redirect()->back();
+    }
 }

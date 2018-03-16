@@ -53,3 +53,8 @@ Route::get('detele-to-cart/{id}',[
     'as'=>'giam-dan-gio-hang',
     'uses'=>'PageController@xoatungsanpham'
 ]);
+
+Route::get('xoa-gio-hang',[
+    'as'=>'empty-cart',
+    'uses'=>'PageController@xoagiohang'
+]);

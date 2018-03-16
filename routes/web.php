@@ -48,3 +48,8 @@ Route::get('add-to-cart/{id}',[
     'as'=>'themgiohang',
     'uses'=>'PageController@themgiohang'
 ]);
+
+Route::get('detele-to-cart/{id}',[
+    'as'=>'giam-dan-gio-hang',
+    'uses'=>'PageController@xoatungsanpham'
+]);

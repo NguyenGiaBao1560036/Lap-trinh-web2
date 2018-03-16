@@ -50,7 +50,7 @@
 											
 											<span class="cart-item-amount">{{$item['qty']}}*<span>{{$item['item']->promotion_price == 0 ?$item['item']->unit_price:$item['item']->promotion_price}}</span></span>
 										</div>
-										<div class="edia-body">x</div>
+										<div class="edia-body"><a href="{{route('giam-dan-gio-hang',$item['item']->id)}}">X</a></div>
 
 									
 									</div>

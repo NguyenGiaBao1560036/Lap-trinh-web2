@@ -92,4 +92,14 @@ class PageController extends Controller
         $req->Session()->put('cart',$cart);
         return redirect()->back();
     }
+    public function xoatungsanpham($id){
+        $oldCart = Session::has('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+        if(count($cart->items) > 0)
+            Session::put('cart',$cart);
+        else
+            Session::forget('cart');
+        return redirect()->back();
+    }
 }

@@ -58,3 +58,8 @@ Route::get('xoa-gio-hang',[
     'as'=>'empty-cart',
     'uses'=>'PageController@xoagiohang'
 ]);
+
+Route::get('dathang',[
+    'as'=>'dat-hang',
+    'uses'=>'PageController@getdathang'
+]);

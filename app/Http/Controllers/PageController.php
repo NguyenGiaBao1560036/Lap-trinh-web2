@@ -107,4 +107,9 @@ class PageController extends Controller
             Session::forget('cart');
         return redirect()->back();
     }
+
+    public function getdathang()
+    {
+        return view('page.dathang');
+    }
 }

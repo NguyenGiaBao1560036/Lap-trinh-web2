@@ -43,3 +43,8 @@ Route::post("lien-he",[
 	'as'=>'lienhe',
 	'uses'=>'PageController@postLienHe'
 ]);
+
+Route::get('add-to-cart/{id}',[
+    'as'=>'themgiohang',
+    'uses'=>'PageController@themgiohang'
+]);

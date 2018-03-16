@@ -52,7 +52,10 @@ margin:0;
 padding:0;
 outline:none
 }
-
+.edia-body{
+    float: left;
+    margin-left: 20px;
+}
 html{overflow-x:hidden;}
 html,body {
 height:100%;

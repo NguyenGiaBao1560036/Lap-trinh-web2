@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\ProductType;
 use Validator;
+use Session;
+use App\Cart;
 class PageController extends Controller
 {
     public function getIndex(){
@@ -81,5 +83,13 @@ class PageController extends Controller
 
         // return redirect()->route('lienhe')
         // ->with('message','Successfully, Plz login');
+    }
+    public function themgiohang(Request $req,$id){
+        $prdct = Product::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($prdct,$id);
+        $req->Session()->put('cart',$cart);
+        return redirect()->back();
     }
 }

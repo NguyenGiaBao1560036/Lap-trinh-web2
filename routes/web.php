@@ -94,6 +94,16 @@ Route::get('dang-xuat',[
 	'uses'=>'PageController@getdangxuat'
 ]);
 
-Route::get('admin',function(){
-	return view('admin.loaisanpham.danhsach');
+Route::group(['prefix'=>'admin'],function(){
+    Route::group(['prefix'=>'loaisanpham'],function(){
+        Route::get('danhsach','loaisanphamcontroller@getdanhsach');
+        Route::get('sua/{id}','loaisanphamcontroller@getsua');
+        Route::post('sua/{id}','loaisanphamcontroller@postsua');
+        Route::get('them','loaisanphamcontroller@getthem');
+        Route::post('them','loaisanphamcontroller@postthem');
+
+        Route::get('xoa/{id}','loaisanpham@getxoa');
+    });
+
+
 });

@@ -17,7 +17,7 @@
 
 						
 						<div class="form-block">
-							<label for="email">Email address*</label>
+							<label for="email">Email</label>
                             <input type="email" id="email" name="email">
                             @if($errors->has('email'))
                                 <div class="text-danger">
@@ -28,7 +28,7 @@
                              @endif
 						</div>
 						<div class="form-block">
-							<label for="phone">Password*</label>
+							<label for="phone">Mật Khẩu</label>
                             <input type="password" id="password" name="password">
                             @if($errors->has('password'))
                                 <div class="text-danger">

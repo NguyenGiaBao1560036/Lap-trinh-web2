@@ -191,7 +191,7 @@ class PageController extends Controller
         $user = new User();
         $user->full_name = $req->name;
         $user->email = $req->email;
-        $user->password = $req->password;
+        $user->password = Hash::make($req->password);
         $user->phone= $req->phone;
         $user->address = $req->address;
         $user->save();
@@ -214,15 +214,22 @@ class PageController extends Controller
             'email.max'=>'Email không quá :max kí tự',
             'email.email'=>'Vui lòng nhập đúng email',
             'password.required'=>'Vui lòng nhập mật khẩu',
+            'password.min'=>'Mật khẩu phải có ít nhất .min kí tự',
+            'password.max'=>'Mật khẩu không quá .max kí tự',
         ];
         $validator = $req->validate($check,$mess);
-       $cre = array('email'=>$req->email,'password'=>$req->password);
-    //    if(Auth::abstract($cre)){
-    //        return  redirect()->route('trang-chu');
-    //    }
 
-    //    else{
-    //        return redirect()->back()->with(['flag'=>'danger', 'message'=>'đăng nhập không thành công']);
-    //    }
+       $cre = array('email'=>$req->email,'password'=>$req->password);
+       if(Auth::attempt($cre)){
+            return  redirect()->route('trang-chu');
+       }
+       else{
+           return redirect()->back()->with(['flag'=>'danger', 'message'=>'đăng nhập không thành công']);
+       }
+    }
+
+    public function getdangxuat(){
+        Auth::logout();
+        return redirect()->route('trang-chu');
     }
 }

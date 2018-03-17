@@ -81,28 +81,27 @@
 				</form>
 			</div>
 			<div class="col-sm-4">
-				<h2>Contact Information</h2>
+				<h2>Thông tin liên hệ</h2>
 				<div class="space20">&nbsp;</div>
 
-				<h6 class="contact-title">Address</h6>
+				<h6 class="contact-title">Địa chỉ</h6>
 				<p>
-					Suite 127 / 267 – 277 Brussel St,<br>
-					62 Croydon, NYC <br>
-					Newyork
+					875 Trần Xuân Soạn,<br>
+					P. Tân Hưng, Quận 7 <br>
+					TP. Hồ Chí Minh
 				</p>
 				<div class="space20">&nbsp;</div>
-				<h6 class="contact-title">Business Enquiries</h6>
+				<h6 class="contact-title">BCD Bakery</h6>
 				<p>
-					Doloremque laudantium, totam rem aperiam, <br>
-					inventore veritatio beatae. <br>
-					<a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
+					Thơm ngon đậm đà, <br>
+					tận hưởng từng giây. <br>
+					<a href="mailto:cviettech@gmail.com">cviettech@gmail.com</a>
 				</p>
 				<div class="space20">&nbsp;</div>
-				<h6 class="contact-title">Employment</h6>
+				<h6 class="contact-title">Tuyển dụng</h6>
 				<p>
-					We’re always looking for talented persons to <br>
-					join our team. <br>
-					<a href="hr@betadesign.com">hr@betadesign.com</a>
+					Hãy đến với chúng tôi để cùng<br> xây dựng hương vị đậm đà. <br>
+					<a href="cclicknhanh@gmail.com">cclicknhanh@gmail.com</a>
 				</p>
 			</div>
 		</div>

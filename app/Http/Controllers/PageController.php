@@ -11,6 +11,9 @@ use App\Cart;
 use App\Customer;
 use App\Bill;
 use App\BillDetail;
+use App\User;
+use Hash;
+
 class PageController extends Controller
 {
     public function getIndex(){
@@ -150,5 +153,50 @@ class PageController extends Controller
         return redirect()->back()->with('thongbao','Đặt Hàng thành công');
         
 
+    }
+
+    public function getdangky(){
+        return view('dangky');
+    }
+
+    public function postdangky(Request $req){
+        // $check = [
+            
+        //     'email'=>'required|max:50|email',
+        //     'name'=>'required|max:50',
+        //     'adress'=>'required|max:50',
+        //     'phone'=>'required|numeric',
+        //     'password'=>'required|min:6|max:20',
+        //     'confirm_password'=>'required|same:password',
+           
+            
+        // ];
+
+        // $mess = [
+        //     'email.required'=>'Vui lòng nhập email',
+        //     'email.max'=>'Email không quá :max kí tự',
+        //     'email.email'=>'Vui lòng nhập đúng email',
+        //     'name.required'=>'Vui lòng nhập họ tên',
+        //     'name.max'=>'Họ tên không quá :max kí tự',
+        //     'adress.required'=>'Vui lòng nhập địa chỉ',
+        //     'adress.max'=>'Chủ đề không quá :max kí tự',
+        //     'pasword.required'=>'Vui lòng nhập mật khẩu',
+        //     'password.min'=>'Mật khẩu phải có ít nhất .min kí tự',
+        //     'confirm_password'=>'Mật khẩu không trùng nhau'
+        // ];
+        // $this->validate($check,$mess);
+
+        $validator =$req->validate([
+            'email'=>'required|max:50|email',
+            'name'=>'required|max:50',
+            'adress'=>'required|max:50',
+            'phone'=>'required|numeric',
+            'password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:password',
+        ]);
+        $data = $req->all();
+        echo "<pre>";
+        print_r($data);
+        echo '</pre>';
     }
 }

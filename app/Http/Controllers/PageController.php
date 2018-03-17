@@ -196,4 +196,7 @@ class PageController extends Controller
         return redirect()->back()->with('thanhcong','Tạo tài khoản thành công');
 
     }
+    public function getdangnhap(){
+        return view('dangnhap');
+    }
 }

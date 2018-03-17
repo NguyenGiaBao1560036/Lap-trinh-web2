@@ -78,3 +78,9 @@ Route::post('dang-ky',[
 	'as'=>'dangky',
 	'uses'=>'PageController@postdangky'
 ]);
+
+Route::get('dang-nhap',[
+	'as'=>'dangnhap',
+	'uses'=>'PageController@getdangnhap'
+]);
+

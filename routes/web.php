@@ -94,4 +94,6 @@ Route::get('dang-xuat',[
 	'uses'=>'PageController@getdangxuat'
 ]);
 
-
+Route::get('admin',function(){
+	return view('admin.loaisanpham.danhsach');
+});

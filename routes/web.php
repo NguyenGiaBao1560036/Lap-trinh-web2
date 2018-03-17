@@ -103,6 +103,15 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('them','loaisanphamcontroller@postthem');
 
         Route::get('xoa/{id}','loaisanpham@getxoa');
+	});
+	
+	Route::group(['prefix'=>'sanpham'],function(){
+        Route::get('danhsach','sanphamcontroller@getdanhsach');
+        Route::get('sua/{id}','sanphamcontroller@getsua');
+        Route::post('sua/{id}','sanphamcontroller@postsua');
+        Route::get('xoa/{id}','sanphamcontroller@getxoa');
+        Route::get('them','sanphamcontroller@getthem');
+        Route::post('them','sanphamcontroller@postthem');
     });
 
 

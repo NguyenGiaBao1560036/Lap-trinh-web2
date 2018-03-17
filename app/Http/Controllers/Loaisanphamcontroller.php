@@ -19,7 +19,7 @@ class Loaisanphamcontroller extends Controller
     public function postthem(Request $req){
         $this->validate($req,
         [
-            'name'=>'required|unique:ProductType,name|min:2|max:100',
+            'name'=>'required|unique:type_products,name|min:2|max:100',
             'description'=>'required',
         ],
         [

@@ -70,11 +70,11 @@ Route::post('dathang',[
 ]);
 
 Route::get('dang-ky',[
-	'as'=>'dang-ky',
+	'as'=>'dangky',
 	'uses'=>'PageController@getdangky'
 ]);
 
 Route::post('dang-ky',[
-	'as'=>'dang-ky',
+	'as'=>'dangky',
 	'uses'=>'PageController@postdangky'
 ]);

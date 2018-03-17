@@ -108,6 +108,12 @@ class sanphamcontroller extends Controller
             $sanpham->image = $image;
         }
         $sanpham->save();
-        return redirect('admin/sanpham/sua' .$id)->with('thongbao','sửa thành công');
+        return redirect('admin/sanpham/sua/' .$id)->with('thongbao','sửa thành công');
+    }
+    public function getxoa($id)
+    {
+        $sanpham = Product::find($id);
+        $sanpham->delete();
+        return redirect('admin/sanpham/danhsach')->with('thongbao','xóa thành công');
     }
 }

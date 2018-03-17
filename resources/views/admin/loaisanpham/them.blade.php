@@ -23,6 +23,12 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
+
+                         @if(session('thongbao1'))
+                            <div class="alert alert-success">
+                                {{session('thongbao1')}}
+                            </div>
+                        @endif
                         <form action="admin/loaisanpham/them" method="POST">
                         <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                             <div class="form-group">

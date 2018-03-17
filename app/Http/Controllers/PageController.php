@@ -13,6 +13,7 @@ use App\Bill;
 use App\BillDetail;
 use App\User;
 use Hash;
+use Auth;
 
 class PageController extends Controller
 {
@@ -183,6 +184,7 @@ class PageController extends Controller
             'address.max'=>'Chủ đề không quá :max kí tự',
             'password.required'=>'Vui lòng nhập mật khẩu',
             'password.min'=>'Mật khẩu phải có ít nhất .min kí tự',
+            'password.max'=>'Mật khẩu không quá .max kí tự',
             'confirm_password.same'=>'Mật khẩu không trùng nhau'
         ];
         $validator = $req->validate($check,$mess);
@@ -198,5 +200,29 @@ class PageController extends Controller
     }
     public function getdangnhap(){
         return view('dangnhap');
+    }
+
+    public function postdangnhap(Request $req){
+        $check = [
+            
+            'email'=>'required|max:50|email',
+            'password'=>'required|min:6|max:20',
+        ];
+
+        $mess = [
+            'email.required'=>'Vui lòng nhập email',
+            'email.max'=>'Email không quá :max kí tự',
+            'email.email'=>'Vui lòng nhập đúng email',
+            'password.required'=>'Vui lòng nhập mật khẩu',
+        ];
+        $validator = $req->validate($check,$mess);
+       $cre = array('email'=>$req->email,'password'=>$req->password);
+    //    if(Auth::abstract($cre)){
+    //        return  redirect()->route('trang-chu');
+    //    }
+
+    //    else{
+    //        return redirect()->back()->with(['flag'=>'danger', 'message'=>'đăng nhập không thành công']);
+    //    }
     }
 }

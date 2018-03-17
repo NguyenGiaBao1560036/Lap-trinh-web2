@@ -84,3 +84,8 @@ Route::get('dang-nhap',[
 	'uses'=>'PageController@getdangnhap'
 ]);
 
+Route::post('dang-nhap',[
+	'as'=>'dangnhap',
+	'uses'=>'PageController@postdangnhap'
+]);
+

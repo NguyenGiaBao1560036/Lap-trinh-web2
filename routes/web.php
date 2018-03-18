@@ -114,5 +114,13 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('them','sanphamcontroller@postthem');
     });
 
+    Route::group(['prefix'=>'slide'],function(){
+        Route::get('danhsach','slidecontroller@getdanhsach');
+        Route::get('sua/{id}','slidecontroller@getsua');
+        Route::post('sua/{id}','slidecontroller@postsua');
+        Route::get('xoa/{id}','slidecontroller@getxoa');
+        Route::get('them','slidecontroller@getthem');
+        Route::post('them','slidecontroller@postthem');
+    });
 
 });

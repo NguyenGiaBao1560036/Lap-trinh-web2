@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Slide;
 class slidecontroller extends Controller
 {
+    public function __construct(){
+        $this->middleware('admin');
+    }
     public function getdanhsach(){
         $slide = Slide::all();
         return view('admin.slide.danhsach',['slide'=>$slide]);

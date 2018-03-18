@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get("index",[
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get("/",[
 	'as'=>'trang-chu',
 	'uses'=>'PageController@getIndex'
 ]);

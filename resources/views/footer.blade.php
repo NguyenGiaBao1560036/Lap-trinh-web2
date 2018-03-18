@@ -13,12 +13,10 @@
                     <h4 class="widget-title">Lĩnh vực khác</h4>
                     <div>
                         <ul>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+                            <li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
+                        
+                            <li><a href="about.html">Giới thiệu</a></li>
+                            <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>

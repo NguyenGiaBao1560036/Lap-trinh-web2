@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Đăng kí</h6>
+            <h6 class="inner-title">Chỉnh Sửa Thông Tin</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="index.html">Home</a> / <span>Đăng kí</span>
+                <a href="{{route('trang-chu')}}">Home</a>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -35,7 +35,7 @@
 
                     
                     <div class="form-block">
-                        <label for="email">Email address*</label>
+                        <label for="email">Email</label>
                         <input type="email" id="email" value="{{$nguoidung->email}}" name="email" >
                         <div class="text-danger">
                             @foreach($errors->get('email') as $err)
@@ -46,7 +46,7 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="your_last_name">Fullname*</label>
+                        <label for="your_last_name">Họ Tên</label>
                         <input type="text" id="your_last_name" value="{{$nguoidung->full_name}}" name="name" >
                         @if($errors->has('name'))
                             <div class="text-danger">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="adress">Address*</label>
+                        <label for="adress">Địa Chỉ</label>
                         <input type="text" id="adress" value="{{$nguoidung->address}}" name="address" >
                         @if($errors->has('address'))
                             <div class="text-danger">
@@ -71,7 +71,7 @@
 
 
                     <div class="form-block">
-                        <label for="phone">Phone*</label>
+                        <label for="phone">Điện Thoại</label>
                         <input type="text" id="phone" value="{{$nguoidung->phone}}" name="phone" >
                         @if($errors->has('phone'))
                             <div class="text-danger">
@@ -82,7 +82,7 @@
                         @endif
                     </div>
                     <div class="form-block">
-                        <label for="phone">Password*</label>
+                        <label for="phone">Mật Khẩu</label>
                         <input type="password" id="password" name="password" >
                         @if($errors->has('password'))
                             <div class="text-danger">
@@ -93,7 +93,7 @@
                         @endif
                     </div>
                     <div class="form-block">
-                        <label for="phone">Re password*</label>
+                        <label for="phone">Nhập Lại Mật Khẩu</label>
                         <input type="password" id="password" name="confirm_password" >
                         @if($errors->has('confirm_password'))
                             <div class="text-danger">

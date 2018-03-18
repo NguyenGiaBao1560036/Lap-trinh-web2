@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Đăng Ký</h6>
+            <h6 class="inner-title">Đăng kí</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="{{route('trang-chu')}}">Trang Chủ
+            <a href="{{route('trang-chu')}}">Home</a> / <span>Đăng kí</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -17,18 +17,19 @@
 <div class="container">
     <div id="content">
     
-     
-
-        <form  action = "{{route('dangky')}}" method="post" class="beta-form-checkout">
+        
+        <form  method="post" class="beta-form-checkout">
         {{csrf_field()}}  
         <!-- <input type="hidden" name="_token" value="{{csrf_token()}} -->
             <div class="row">
                 <div class="col-sm-3">
-                @if(Session::has('thanhcong'))
-                    <div class="text-danger">{{Session::get('thanhcong')}}</div>
-                @endif
+                    
+                     @if(Session::has('thanhcong'))
+                            <div class="text-danger">{{Session::get('thanhcong')}}</div>
+                     @endif
+                     
                 </div>
-               
+
                 <div class="col-sm-6">
                     <h4>Đăng kí</h4>
                     <div class="space20">&nbsp;</div>
@@ -38,11 +39,10 @@
                         <label for="email">Email*</label>
                         <input type="email" id="email"  name="email" >
                         <div class="text-danger">
-                            @foreach($errors->get('email') as $err)
-                                <li>{{$err}}</li>
-                            @endforeach
+                                @foreach($errors->get('email') as $err)
+                                    <li>{{$err}}</li>
+                                @endforeach
                         </div>
-                        
                     </div>
 
                     <div class="form-block">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="adress">Địa Chỉ</label>
+                        <label for="adress">Địa Chỉ*</label>
                         <input type="text" id="adress"  name="address" >
                         @if($errors->has('address'))
                             <div class="text-danger">
@@ -66,50 +66,50 @@
                                     <li>{{$err}}</li>
                                 @endforeach
                             </div>
-                        @endif
+                         @endif
                     </div>
 
 
                     <div class="form-block">
-                        <label for="phone">Điện Thoại</label>
+                        <label for="phone">Số Điện Thoại*</label>
                         <input type="text" id="phone" name="phone" >
                         @if($errors->has('phone'))
-                            <div class="text-danger">
-                                @foreach($errors->get('phone') as $err)
-                                    <li>{{$err}}</li>
-                                @endforeach
-                            </div>
-                        @endif
+                        <div class="text-danger">
+                            @foreach($errors->get('phone') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                         @endif
                     </div>
                     <div class="form-block">
-                        <label for="phone">Mật Khẩu</label>
+                        <label for="phone">Mật Khẩu*</label>
                         <input type="password" id="password" name="password" >
                         @if($errors->has('password'))
-                            <div class="text-danger">
-                                @foreach($errors->get('password') as $err)
-                                    <li>{{$err}}</li>
-                                @endforeach
-                            </div>
-                        @endif
+                        <div class="text-danger">
+                            @foreach($errors->get('password') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                    @endif
                     </div>
                     <div class="form-block">
-                        <label for="phone">Nhập Lại Mật Khẩu</label>
+                        <label for="phone">Nhập Lại Mật Khẩu*</label>
                         <input type="password" id="password" name="confirm_password" >
                         @if($errors->has('confirm_password'))
-                            <div class="text-danger">
-                                @foreach($errors->get('confirm_password') as $err)
-                                    <li>{{$err}}</li>
-                                @endforeach
-                            </div>
-                        @endif
+                        <div class="text-danger">
+                            @foreach($errors->get('confirm_password') as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                        </div>
+                    @endif
                     </div>
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Đăng Ký</button>
                     </div>
                 </div>
-                <div class="col-sm-3"></div>
+              <div class="col-sm-3"></div>
             </div>
         </form>
     </div> 
 </div>
-@endsection
+@endsection 

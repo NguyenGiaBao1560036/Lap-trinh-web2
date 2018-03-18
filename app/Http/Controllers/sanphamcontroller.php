@@ -76,7 +76,7 @@ class sanphamcontroller extends Controller
         $sanpham = Product::find($id);
         $this->validate($request,[
             'loaisanpham'=>'required',
-            'name'=>'required|min:3|unique:products,name',
+            'name'=>'required|min:3',
             'description'=>'required',
             'unit_price'=>'required',
             'promotion_price'=>'required'
@@ -84,7 +84,7 @@ class sanphamcontroller extends Controller
             'loaisanpham.required'=>'Bạn chưa chọn loại sản phẩm',
             'name.required'=>'Bạn chưa nhập tên sản phẩm',
             'name.min'=>'Sản phẩm phải có ít 3 ký tự ',
-            'name.unique'=>'Tiêu đề đã tồn tại',
+           
             'description.required'=>'Bạn chưa nhập miêu tả',
             'unit_price.required'=>'Bạn chưa nhập giá gốc',
             'promotion_price.required'=>'Bạn chưa nhập khuyến mãi'

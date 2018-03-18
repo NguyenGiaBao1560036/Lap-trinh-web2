@@ -50,11 +50,11 @@ class Loaisanphamcontroller extends Controller
          $loaisanpham = ProductType::find($id);
          $this->validate($request,
          [
-             'name'=>'required|unique:type_products,name|min:2|max:100'
+             'name'=>'required|min:2|max:100'
          ],
          [
              'name.required'=>'Bạn Chưa Nhập Loại Sản Phẩm',
-             'name.unique'=>'Tên loại sản phẩm đã tồn tại',
+             
              'name.min'=>'Tên loại sản phẩm phải có độ dài tự 3 cho đến 100 ký tự ',
              'name.max'=>'Tên loại sản phẩm phải có độ dài tự 3 cho đến 100 ký tự ',
          ]);

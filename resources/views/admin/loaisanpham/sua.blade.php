@@ -29,6 +29,11 @@
                                 <label>Tên Loại Sản Phẩm</label>
                                 <input class="form-control" name="name" placeholder="Điền tên loại sản phẩm" value="{{$loaisanpham->name}}" />
                             </div>
+
+                            <div class="form-group">
+                                <label>Miêu Tả</label>
+                                <input class="form-control" name="name" placeholder="Điền tên loại sản phẩm" value="{{$loaisanpham->description}" /> 
+                            </div>
                             
                             <button type="submit" class="btn btn-default">Sửa</button>
                             <button type="reset" class="btn btn-default">Làm Mới</button>

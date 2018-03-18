@@ -60,5 +60,12 @@ class Loaisanphamcontroller extends Controller
          $loaisanpham->save();
          return redirect('admin/loaisanpham/sua/'.$id)->with('thongbao','Sửa Thành Công');
      }
+
+     public function getxoa($id)
+     {
+         $loaisanpham = ProductType::find($id);
+         $loaisanpham->delete();
+         return redirect('admin/loaisanpham/danhsach')->with('thongbao','Bạn đã xóa thành công');
+     }
  
 }

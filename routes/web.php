@@ -102,7 +102,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('them','loaisanphamcontroller@getthem');
         Route::post('them','loaisanphamcontroller@postthem');
 
-        Route::get('xoa/{id}','loaisanpham@getxoa');
+        Route::get('xoa/{id}','loaisanphamcontroller@getxoa');
 	});
 	
 	Route::group(['prefix'=>'sanpham'],function(){

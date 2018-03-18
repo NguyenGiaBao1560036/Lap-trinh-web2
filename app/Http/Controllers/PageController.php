@@ -232,4 +232,48 @@ class PageController extends Controller
         Auth::logout();
         return redirect()->route('trang-chu');
     }
+
+   
+    public function getchinhsua($id){
+        $nguoidung =  User::find($id);
+        return view('taikhoan',['nguoidung'=>$nguoidung]);
+    }
+    public function postchinhsua(Request $request,$id)
+    {
+       
+        $user = User::find($id);
+        $this->validate($request,[
+            'email'=>'required|max:50|email',
+            'name'=>'required|max:50',
+            'address'=>'required|max:50',
+            'phone'=>'required|numeric',
+            'password'=>'required|min:6|max:20',
+            'confirm_password'=>'required|same:password',
+        ],[
+            'email.required'=>'Vui lòng nhập email',
+            'email.max'=>'Email không quá :max kí tự',
+            'email.email'=>'Vui lòng nhập đúng email',
+            'name.required'=>'Vui lòng nhập họ tên',
+            'name.max'=>'Họ tên không quá :max kí tự',
+            'address.required'=>'Vui lòng nhập địa chỉ',
+            'phone.required'=>'Vui lòng nhập điện thoại',
+            'phone.numeric'=>'Số điện thoại phải là số',
+            'address.max'=>'Chủ đề không quá :max kí tự',
+            'password.required'=>'Vui lòng nhập mật khẩu',
+            'password.min'=>'Mật khẩu phải có ít nhất :min kí tự',
+            'password.max'=>'Mật khẩu không quá :max kí tự',
+            'confirm_password.same'=>'Mật khẩu không trùng nhau',
+            'confirm_password.required'=>'Vui lòng nhập lại mật khẩu'
+
+        ]);
+     
+        $user->full_name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->phone= $request->phone;
+        $user->address =$request->address;
+        $user->save();
+        return redirect()->back()->with('thanhcong','Sửa tài khoản thành công');
+
+    }
 }

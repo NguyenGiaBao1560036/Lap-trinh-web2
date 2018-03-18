@@ -15,7 +15,7 @@
 					@if(Auth::user()->isAdmin())
 						<li><a href="admin/sanpham/danhsach"> Admin</a>
 					@endif
-	
+					<li><a href="chinh-sua/{{Auth::user()->id}}">Thông tin Cá Nhân</a></li>
 				@else
 					<li><a href="{{route('dangky')}}">Đăng Kí</a></li>
 					<li><a href="{{route('dangnhap')}}">Đăng Nhập</a></li>

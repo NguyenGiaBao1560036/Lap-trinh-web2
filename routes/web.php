@@ -133,3 +133,14 @@ Route::group(['prefix'=>'admin'],function(){
     });
 
 });
+
+Route::get('chinh-sua/{id}',[
+	'as'=>'chinhsua',
+	'uses'=>'PageController@getchinhsua'
+]);
+
+Route::post('chinh-sua/{id}',[
+	'as'=>'chinhsua',
+	'uses'=>'PageController@postchinhsua'
+]);
+

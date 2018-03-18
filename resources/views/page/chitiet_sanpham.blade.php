@@ -56,7 +56,7 @@
 								<option value="XL">5</option>
 							</select>
 						
-							<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+							<a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
 							<div class="clearfix"></div>
 						</div>
 					</div>
@@ -96,8 +96,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="{{route('themgiohang',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -138,7 +138,7 @@
 						<div class="beta-sales beta-lists">
 						@foreach($sale as $l)
 							<div class="media beta-sales-item">
-								<a class="pull-left" href="product.html"><img src="Source/image/product/{{$l->image}}" alt=""></a>
+								<a class="pull-left" href="{{route('chitietsanpham',$l->id)}}"><img src="Source/image/product/{{$l->image}}" alt=""></a>
 								<div class="media-body">
 									{{$l->name}}
 									<span class="beta-sales-price">

@@ -37,4 +37,28 @@ class Loaisanphamcontroller extends Controller
 
         return redirect('admin/loaisanpham/them')->with('thongbao','Thêm Thành Công');
     }
+
+    public function getsua($id){
+        $loaisanpham =  ProductType::find($id);
+        return view('admin/loaisanpham/sua',['loaisanpham'=>$loaisanpham]);
+     }
+     public function postsua(Request $request,$id)
+     {
+         $loaisanpham = ProductType::find($id);
+         $this->validate($request,
+         [
+             'name'=>'required|unique:type_products,name|min:2|max:100'
+         ],
+         [
+             'name.required'=>'Bạn Chưa Nhập Loại Sản Phẩm',
+             'name.unique'=>'Tên loại sản phẩm đã tồn tại',
+             'name.min'=>'Tên loại sản phẩm phải có độ dài tự 3 cho đến 100 ký tự ',
+             'name.max'=>'Tên loại sản phẩm phải có độ dài tự 3 cho đến 100 ký tự ',
+         ]);
+ 
+         $loaisanpham->name = $request->name;
+         $loaisanpham->save();
+         return redirect('admin/loaisanpham/sua/'.$id)->with('thongbao','Sửa Thành Công');
+     }
+ 
 }

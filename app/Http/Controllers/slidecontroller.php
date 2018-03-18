@@ -40,7 +40,7 @@ class slidecontroller extends Controller
         return redirect('admin/slide/them')->with('thongbao','Thêm slide thành công');
    }
 
-   public function getsua($id){
+    public function getsua($id){
          $slide =  Slide::find($id);
          return view('admin/slide/sua',['slide'=>$slide]);
     }

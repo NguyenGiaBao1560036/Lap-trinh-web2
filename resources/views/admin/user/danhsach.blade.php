@@ -44,8 +44,8 @@
                                 <td>{{$nd->phone}}</td>
                                 <td>{{$nd->address}}</td>
                             
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/user/xoa/{{$nd->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/user/sua/{{$nd->id}}">Edit</a></td>
                             </tr>
                         @endforeach
                         </tbody>

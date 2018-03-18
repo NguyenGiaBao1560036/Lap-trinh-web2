@@ -12,6 +12,9 @@
 				@if(Auth::check())
 					<li><a href="">Chào bạn {{Auth::user()->full_name}}</a></li>
 					<li><a href="{{route('dangxuat')}}">Đăng Xuất</a></li>
+					@if(Auth::user()->isAdmin())
+						<li><a href="admin/sanpham/danhsach"> Admin</a>
+					@endif
 	
 				@else
 					<li><a href="{{route('dangky')}}">Đăng Kí</a></li>

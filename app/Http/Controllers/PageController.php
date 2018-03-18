@@ -179,7 +179,7 @@ class PageController extends Controller
             'email.email'=>'Vui lòng nhập đúng email',
             'name.required'=>'Vui lòng nhập họ tên',
             'name.max'=>'Họ tên không quá :max kí tự',
-            'adress.required'=>'Vui lòng nhập địa chỉ',
+            'address.required'=>'Vui lòng nhập địa chỉ',
             'phone.required'=>'Vui lòng nhập điện thoại',
             'address.max'=>'Chủ đề không quá :max kí tự',
             'password.required'=>'Vui lòng nhập mật khẩu',

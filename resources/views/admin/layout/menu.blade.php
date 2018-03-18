@@ -55,7 +55,7 @@
                             <a href="#"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="admin/user/danhsach">List User</a>
+                                    <a href="admin/user/danhsach">Danh Sách</a>
                                 </li>
                                 <li>
                                     <a href="admin/user/them">Thêm</a>

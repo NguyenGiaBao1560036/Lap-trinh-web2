@@ -123,4 +123,13 @@ Route::group(['prefix'=>'admin'],function(){
         Route::post('them','slidecontroller@postthem');
     });
 
+    Route::group(['prefix'=>'user'],function(){
+        Route::get('danhsach','usercontroller@getdanhsach');
+        Route::get('sua/{id}','usercontroller@getsua');
+        Route::post('sua/{id}','usercontroller@postsua');
+        Route::get('xoa/{id}','usercontroller@getxoa');
+        Route::get('them','usercontroller@getthem');
+        Route::post('them','usercontroller@postthem');
+    });
+
 });

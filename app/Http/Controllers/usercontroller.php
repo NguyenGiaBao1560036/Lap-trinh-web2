@@ -42,8 +42,8 @@ class usercontroller extends Controller
             'phone.required'=>'Vui lòng nhập điện thoại',
             'address.max'=>'Chủ đề không quá :max kí tự',
             'password.required'=>'Vui lòng nhập mật khẩu',
-            'password.min'=>'Mật khẩu phải có ít nhất .min kí tự',
-            'password.max'=>'Mật khẩu không quá .max kí tự',
+            'password.min'=>'Mật khẩu phải có ít nhất :min kí tự',
+            'password.max'=>'Mật khẩu không quá :max kí tự',
             'confirm_password.same'=>'Mật khẩu không trùng nhau',
             'confirm_password.required'=>'Vui lòng nhập lại mật khẩu'
 
@@ -62,6 +62,12 @@ class usercontroller extends Controller
     public function getsua($id){
             $nguoidung =  User::find($id);
             return view('admin/user/sua',['nguoidung'=>$nguoidung]);
+    }
+    public function getxoa($id)
+    {
+        $nguoidung =  User::find($id);
+        $nguoidung->delete();
+        return redirect('admin/user/danhsach')->with('thongbao','Xóa người dùng thành công');
     }
     public function postsua(Request $request,$id)
     {

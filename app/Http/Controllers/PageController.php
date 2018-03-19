@@ -214,8 +214,8 @@ class PageController extends Controller
             'email.max'=>'Email không quá :max kí tự',
             'email.email'=>'Vui lòng nhập đúng email',
             'password.required'=>'Vui lòng nhập mật khẩu',
-            'password.min'=>'Mật khẩu phải có ít nhất .min kí tự',
-            'password.max'=>'Mật khẩu không quá .max kí tự',
+            'password.min'=>'Mật khẩu phải có ít nhất :min kí tự',
+            'password.max'=>'Mật khẩu không quá :max kí tự',
         ];
         $validator = $req->validate($check,$mess);
 
